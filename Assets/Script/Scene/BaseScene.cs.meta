@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: fcaf0ac91be13b34387488750eaaedfb
+timeCreated: 1449939722
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - dirtObject: {fileID: 126966, guid: 462fb5b61d7841f42afd8b613f9be259, type: 2}
+  - waterObject: {fileID: 176902, guid: 37a58df6e665dc1409f307dd567b51ba, type: 2}
+  - seedObject: {fileID: 146126, guid: 618903b5d83dbc844afa9aa755bf6157, type: 2}
+  - wetObject: {fileID: 100460, guid: 87a7ba0d592c8454c9b265e58e52f236, type: 2}
+  - mudObject: {fileID: 188364, guid: 091a9bf487c0fc34cb607ccbb653ed00, type: 2}
+  - burriedObject: {fileID: 155102, guid: c015d536ace09fe4088a94a2f7ead4cf, type: 2}
+  - flowerObject: {fileID: 188852, guid: a756dc436d7f710468a5cbe01bc0049e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
