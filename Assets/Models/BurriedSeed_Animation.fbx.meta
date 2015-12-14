@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: 5db93aea0b44c324ebb0ae5d836634ef
+timeCreated: 1450051838
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: //RootNode
+    100004: Camera
+    100006: Cube.001
+    100008: Icosphere
+    100010: Icosphere.001
+    100012: Lamp
+    100014: LeftBicep
+    100016: LeftForearm
+    100018: LeftForearm_end
+    100020: LeftShin
+    100022: LeftShin_end
+    100024: LeftThigh
+    100026: RightBicep
+    100028: RightForearm
+    100030: RightForearm_end
+    100032: RightShin
+    100034: RightShin_end
+    100036: RightThigh
+    400000: Armature
+    400002: //RootNode
+    400004: Camera
+    400006: Cube.001
+    400008: Icosphere
+    400010: Icosphere.001
+    400012: Lamp
+    400014: LeftBicep
+    400016: LeftForearm
+    400018: LeftForearm_end
+    400020: LeftShin
+    400022: LeftShin_end
+    400024: LeftThigh
+    400026: RightBicep
+    400028: RightForearm
+    400030: RightForearm_end
+    400032: RightShin
+    400034: RightShin_end
+    400036: RightThigh
+    2300000: Icosphere
+    2300002: Icosphere.001
+    3300000: Icosphere
+    3300002: Icosphere.001
+    4300000: Cube.001
+    4300002: Icosphere
+    4300004: Icosphere.001
+    7400000: Run
+    7400002: Armature|IcosphereAction
+    7400004: Armature|IcosphereAction.001
+    7400006: Icosphere|IcosphereAction
+    7400008: Icosphere|IcosphereAction.001
+    7400010: Icosphere.001|IcosphereAction
+    7400012: Idle
+    9500000: //RootNode
+    13700000: Cube.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Armature|ArmatureAction
+      firstFrame: 2
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/LeftBicep
+        weight: 1
+      - path: Armature/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/LeftBicep/LeftForearm/LeftForearm_end
+        weight: 1
+      - path: Armature/LeftThigh
+        weight: 1
+      - path: Armature/LeftThigh/LeftShin
+        weight: 1
+      - path: Armature/LeftThigh/LeftShin/LeftShin_end
+        weight: 1
+      - path: Armature/RightBicep
+        weight: 1
+      - path: Armature/RightBicep/RightForearm
+        weight: 1
+      - path: Armature/RightBicep/RightForearm/RightForearm_end
+        weight: 1
+      - path: Armature/RightThigh
+        weight: 1
+      - path: Armature/RightThigh/RightShin
+        weight: 1
+      - path: Armature/RightThigh/RightShin/RightShin_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Icosphere.001
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Armature|ArmatureAction
+      firstFrame: 31
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/LeftBicep
+        weight: 1
+      - path: Armature/LeftBicep/LeftForearm
+        weight: 1
+      - path: Armature/LeftBicep/LeftForearm/LeftForearm_end
+        weight: 1
+      - path: Armature/LeftThigh
+        weight: 1
+      - path: Armature/LeftThigh/LeftShin
+        weight: 1
+      - path: Armature/LeftThigh/LeftShin/LeftShin_end
+        weight: 1
+      - path: Armature/RightBicep
+        weight: 1
+      - path: Armature/RightBicep/RightForearm
+        weight: 1
+      - path: Armature/RightBicep/RightForearm/RightForearm_end
+        weight: 1
+      - path: Armature/RightThigh
+        weight: 1
+      - path: Armature/RightThigh/RightShin
+        weight: 1
+      - path: Armature/RightThigh/RightShin/RightShin_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      - path: Icosphere.001
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -33,6 +33,8 @@ public class Character : MonoBehaviour {
     private float _startTime;
     private BaseScene _scene;
 
+    private Animator _animator;
+
     private bool _hasMoved; //Prevents player from accidently despawning it as soon as it spawns.
 
     void Awake()
@@ -45,14 +47,15 @@ public class Character : MonoBehaviour {
 	void Start () {
         this._scene = GameObject.Find("GameScene").GetComponent<BaseScene>();
 
-        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        /* GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
-        go.transform.parent = this.transform.FindChild("Direction");
-        go.transform.localScale = new Vector3(.25f, .25f, .25f);
-        go.transform.localPosition = new Vector3(0, 0, 0);
-        Destroy(go.GetComponent<BoxCollider>());
+         go.transform.parent = this.transform.FindChild("Direction");
+         go.transform.localScale = new Vector3(.25f, .25f, .25f);
+         go.transform.localPosition = new Vector3(0, 0, 0);
+         Destroy(go.GetComponent<BoxCollider>());*/
 
         this._hasMoved = false;
+        this._animator = this.gameObject.GetComponentInChildren<Animator>();
 
         updateDirection();
     }
@@ -97,6 +100,8 @@ public class Character : MonoBehaviour {
         this._startTime = Time.time;
         this._startPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, this.transform.localPosition.z);
         this._endPosition = new Vector3(this.transform.localPosition.x + (this.transform.forward.x * .5f), this.transform.localPosition.y + (this.transform.forward.y * .5f), this.transform.localPosition.z + (this.transform.forward.z * .5f));
+
+        if (this._animator) this._animator.Play("Run");
     }
 
     public void rotateRight()
@@ -194,6 +199,8 @@ public class Character : MonoBehaviour {
                 {
                     this._scene.Remove(this, true);
                     Destroy(gameObject);
+
+                    this._scene.PlayFlowerEat();
                 }
 
                 if ((characterA.type == CollisionType.seed && this.type == CollisionType.mud) ||
@@ -207,12 +214,15 @@ public class Character : MonoBehaviour {
                     combined = this._scene.Create(CollisionType.flower);
                     Destroy(gameObject);
 
+                    this._scene.PlayCreateFlower();
+
                     this._scene.Remove(characterA);
                     Destroy(characterA.gameObject);
                 }
 
                 if ((characterA.type == CollisionType.dirt && this.type == CollisionType.water))
                 {
+                    this._scene.PlayCombine();
                     this._scene.Remove(this);
                     combined = this._scene.Create(CollisionType.mud);
                     Destroy(gameObject);
@@ -223,6 +233,7 @@ public class Character : MonoBehaviour {
 
                 if ((characterA.type == CollisionType.water && this.type == CollisionType.seed))
                 {
+                    this._scene.PlayCombine();
                     this._scene.Remove(this);
                     combined = this._scene.Create(CollisionType.wetSeed);
                     Destroy(gameObject);
@@ -233,6 +244,7 @@ public class Character : MonoBehaviour {
 
                 if ((characterA.type == CollisionType.seed && this.type == CollisionType.dirt))
                 {
+                    this._scene.PlayCombine();
                     this._scene.Remove(this);
                     combined = this._scene.Create(CollisionType.burriedSeed);
                     Destroy(gameObject);

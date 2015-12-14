@@ -29,9 +29,13 @@ public class MainUI : MonoBehaviour {
 
     public void UpdateGoals()
     {
+        if (!this._gameScene)
+            this._gameScene = BaseScene.SCENE;
         // this.transform.FindChild("Goal").GetComponent<Text>().text = description;
+        this._goal = this.transform.FindChild("Goal").GetComponent<Text>();
         this._goal.text = "<b>Goal</b>\n";
-       foreach (BaseGoal goal in this._gameScene.goals)
+        print(this._goal + " " + this.transform.FindChild("Goal").GetComponent<Text>() + "? "+ this._gameScene);
+        foreach (BaseGoal goal in this._gameScene.goals)
        {
             this._goal.text += goal.achieved ? "  <b>" + goal.description + "</b>" : "  <i><color=\"#999999\">"+goal.description+"</color></i>";
        }
@@ -45,5 +49,22 @@ public class MainUI : MonoBehaviour {
         this._lostDirt.text = "Lost Dirt\n" + this._gameScene.lostDirt;
 
         this._collectedFlower.text = "Flowers\n" + this._gameScene.collectedFlowers +" of "+this._gameScene.createFlowers; 
+    }
+
+    public void HideReady()
+    {
+        GameObject.Find("ReadyText").GetComponent<Text>().text = "GO!";
+        Invoke("HideGo", 1);
+    }
+
+    public void HideGo()
+    {
+        GameObject.Find("ReadyText").GetComponent<Text>().text = "";
+
+    }
+
+    public void OnWin()
+    {
+        GameObject.Find("ReadyText").GetComponent<Text>().text = "You did it!";
     }
 }

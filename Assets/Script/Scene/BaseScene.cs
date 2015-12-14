@@ -37,6 +37,10 @@ public class BaseScene : MonoBehaviour {
     public int createFlowers = 0;
     public Difficulty currentDifficulty;
 
+    public AudioClip audioCollectFlower;
+    public AudioClip audioCreateFlower;
+    public AudioClip audioEatFlower;
+    public AudioClip audioCombineObjects;
 
     private bool _gameActive;
     private bool _gamePaused;
@@ -56,6 +60,9 @@ public class BaseScene : MonoBehaviour {
     private int _spawnIndex = 0;
     private List<BaseGoal> _goals;
 
+    private AudioSource audio;
+
+
     public bool gameActive
     {
         get { return this._gameActive; }
@@ -74,7 +81,9 @@ public class BaseScene : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
-        Invoke("StartLevel", 2);
+        Invoke("StartLevel", 2.5f);
+
+        audio = GetComponent<AudioSource>();
 
         this.LoadGoals();
 
@@ -93,6 +102,8 @@ public class BaseScene : MonoBehaviour {
         print("Level Start");
         this._gameActive = true;
         Invoke("MoveCharacters", this.gameSpeed );
+
+        GameObject.Find("GameUI").GetComponent<MainUI>().HideReady() ;
 
     }
 
@@ -113,6 +124,7 @@ public class BaseScene : MonoBehaviour {
         __createFlowersGoal.flowerGoal = 4;
         goalString.Add(__createFlowersGoal.description);
         this._goals.Add(__createFlowersGoal);
+        print(this._goals);
 
         GameObject.Find("GameUI").GetComponent<MainUI>().UpdateGoals() ;
 
@@ -174,6 +186,21 @@ public class BaseScene : MonoBehaviour {
     public void Remove(Character character)
     {
         this._characters.Remove(character);
+    }
+
+    public void PlayCombine()
+    {
+        audio.PlayOneShot(this.audioCombineObjects, 1f);
+    }
+
+    public void PlayFlowerEat()
+    {
+        audio.PlayOneShot(this.audioEatFlower, 1f);
+    }
+
+    public void PlayCreateFlower()
+    {
+        audio.PlayOneShot(this.audioCreateFlower, 1f);
     }
 
     public void SpawnObject()
@@ -322,7 +349,11 @@ public class BaseScene : MonoBehaviour {
         if(succeses == n)
         {
             this._gameActive = false;
+
         }
+
+
         GameObject.Find("GameUI").GetComponent<MainUI>().UpdateGoals();
+        GameObject.Find("GameUI").GetComponent<MainUI>().OnWin();
     }
 }
